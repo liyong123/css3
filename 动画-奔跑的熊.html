@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>奔跑的熊</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            background-color: #ccc;
+            background: url('./images/bingshan.jpg') no-repeat;
+            background-size: 100% 100%;
+        }
+        div {
+           position: absolute;
+           top: 50%;
+           width: 200px;
+           height: 100px;
+           background: url('./images/bear.png') no-repeat;
+           animation: moveB 1s steps(8) infinite , moveC 20s forwards;
+        
+       }
+       @keyframes moveB {
+           0% {
+               background-position: 0 0;
+           }
+           100% {
+               background-position: -1600px 0;
+           }
+       }
+       @keyframes moveC {
+           0% {
+               left: 0;
+           }
+           100% {
+               left: 50%;
+               /* 水平居中 */
+               transform: translateX(-50%);
+           }
+       }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

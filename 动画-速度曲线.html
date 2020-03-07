@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>速度曲线-steps()属性</title>
+    <style>
+        div {
+            width: 0;
+            font-size: 20px;
+            height: 30px;
+            background-color: blue;
+            animation-name: v;
+            animation-duration: 3s;
+            /* steps 就是分几步来完成动画，有了steps 就不要写ease或者linear了 */
+            animation-timing-function: steps(10);
+            /* 动画结束停止 */
+            animation-fill-mode: forwards;
+            /* 隐藏 */
+            overflow: hidden;
+            /* 不折行 */
+            white-space: nowrap;
+        }
+        @keyframes v {
+            0% {
+                width: 0;
+            }
+            100% {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>中华人民共和国成立啦！</div>
+</body>
+</html>

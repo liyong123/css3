@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D</title>
+</head>
+<body>
+    <h3>3D:</h3>
+    <p>x轴：水平向右，x右边是正值，左边是负值</p>
+    <p>y轴：垂直向下，y下面是正值，上面是负值</p>
+    <p>z轴：垂直屏幕，往外是正值，往里面是负值</p>
+    <h3>3D最常用的是：3D位移和3D旋转</h3>
+    <p>3D位移：translate3d(x, y, z)</p>
+    <p>3D旋转：rotate3d(x, y, z)</p>
+    <p>透视：perspective</p>
+    <p>3D呈现：transform-style</p>
+    <h3>translate3d:</h3>
+    <p>transform: translateX(100px)</p>
+    <p>transform: translateY(100px)</p>
+    <p>transform: translateZ(100px), z轴一般跟px单位，向眼睛方向移动</p>
+    <p>transform: translate3d(x, y, z)，xyz不能省，如果没有就写0</p>
+    <h3>透视：perspective:</h3>
+    <p>近大远小</p>
+    <p>透视也称为视距：视距就是人的眼睛到屏幕的距离</p>
+    <p>距离视觉点越近的在电脑平面成像越大，越远成像越小</p>
+    <p>透视的单位是像素</p>
+    <p>透视写在被观察元素的父盒子上，perspective值越小，表明眼睛离观察物体越近，物体看起来越大。</p>
+    <p>眼睛-->物体-->屏幕，眼睛和屏幕之间的物体离眼睛越近，物体投在屏幕越大，也就是tranlateZ值越大，看到的物体越大</p>
+</body>
+</html>
