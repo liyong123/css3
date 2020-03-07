@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>动画</title>
+    <style>
+       /* 定义动画  */
+       @keyframes move {
+           /* 开始状态 */
+           0% {
+               transform: translateX(0);
+           }
+           50% {
+              transform: translate(800px);
+           }
+           /* 结束状态 */
+           100% {
+               transform: translate(0);
+           }
+       }
+       div:first-child {
+           width: 100px;
+           height: 100px;
+           background-color: purple;
+           /* 调用动画 */
+           animation-name: move;
+           /* 持续时间 */
+           animation-duration: 2s;
+       }
+       @keyframes moveQ {
+           0% {
+               transform: translate(0, 0) rotate(360deg) scale(1);
+           }
+           25% {
+               transform: translate(800px, 0) rotate(0) scale(1.5);
+           }
+           50% {
+               transform: translate(800px, 200px) rotate(360deg) scale(1);
+           }
+           75% {
+               transform: translate(0, 200px) rotate(0deg) scale(1.5);
+           }
+           100% {
+               transform: translate(0, 0) rotate(360deg) scale(1);
+           }
+       }
+       div {
+           width: 50px;
+           height: 50px;
+           background-color: red;
+           animation-name: moveQ;
+           animation-duration: 5s;
+       }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <h3>动画（animation）：</h3>
+    <p>1、动画是css3中具有颠覆性的特征之一，可设置多个节点精确控制一个或一组动画，常用来实现复杂的动画效果。</p>
+    <p>2、相比较过渡，动画可以实现更多变化、更多控制，连续自动播放等效果。</p>
+    <h3>制作动画分两步：</h3>
+    <p>1、先定义：1、keyframes：关键帧；2、动画序列：0%、100%；相当于from、to</p>
+    <p>2、后使用：1、animation-name: 动画名称；2、animation-duration：持续时间</p>
+</body>
+</html>

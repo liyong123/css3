@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>综合写法</title>
+    <style>
+        div {
+           width: 200px;
+           height: 200px;
+           background-color: purple;
+           transition: all 1s;
+        }
+        div:hover {
+            transform: translate(100px, 50px) rotate(180deg) scale(1.5);
+        }
+    </style>
+
+    
+</head>
+<body>
+    <h3>综合写法注意点：</h3>
+    <p>1、同时使用多个转换，其格式是：transform：translate(x, y) rotate(*deg) scale(*)</p>
+    <p>2、其顺序会影响转换的效果。（先旋转会改变坐标轴方向）</p>
+    <p>3、当我们同时有位移和其他属性的时候，记得要将位移放在最前面。</p>
+    <div></div>
+</body>
+</html>

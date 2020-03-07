@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform</title>
+    <style>
+      div.example-box :first-child {
+          width: 100px;
+          height: 100px;
+          background-color: pink;
+          /* x:x轴方向，y:y轴方向 */
+          transform: translate(30px, 30px);
+          /* 也可以分开写，移动一个方向 */
+          /* transform: translateX(100px); */
+          /* transform: translateY(100px); */
+      }
+      div.example-box :first-child:hover {
+          /* 下面元素位置不动,“浮上去移动” 门户网站用的较多 */
+          transform: translate(30px, -25px);
+      }
+      div.example-box :nth-child(2) {
+          width: 100px;
+          height: 100px;
+          background-color: purple;
+      }
+      div.example-box2 {
+          width: 400px;
+          height: 400px;
+          background-color: pink;
+          position: relative;
+      }
+      div.example-box2 p {
+          background-color: purple;
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          top: 50%;
+          left: 50%;
+          /* margin-left: -50px;
+          margin-top: -50px; */
+          /* 此种写法好处：无论p元素的大小如何变化都不受影响 */
+          transform: translate(-50%, -50%);
+      }
+    </style>
+</head>
+<body>
+    <h3>1、transform:2D转换</h3>
+    <div>
+        <p>1、translate(x, y):移动，a、不会影响其他元素的位置；b、单位为百分比的时候，是相对于自身的百分比，c、对行内标签没有作用</p> 
+        <p>2、rotate:旋转</p>
+        <p>3、scale:缩放</p>       
+    </div>
+    <div class="example-box">
+        <div></div>
+        <div></div>
+    </div>
+    <h3>2、模拟水平垂直居中</h3>
+    <div class="example-box2">
+        <p></p>
+    </div>
+</body>
+</html>

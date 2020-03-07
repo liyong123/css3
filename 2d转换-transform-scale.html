@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scale放大、缩小</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            margin: 100px auto;
+            transition: all 0.2s;
+            /* 改变缩放中心点 */
+            transform-origin: 10px 10px;
+        }
+        div:hover {
+            /* 放大2倍 */
+            transform: scale(2,2);
+        }
+    </style>
+</head>
+<body>
+    <h3>transform: scale(x, y) 放大、缩小</h3>
+    <div></div>
+    <p>1、transform: scale(1, 1)：没有放大</p>
+    <p>2、transform: scale(0.5, 0.5)：缩小</p>
+    <p>3、transform: scale(2) ==  transform: scale(2, 2)</p>
+    <p>4、transform: scale(1, 1)：没有放大</p>
+    <p>5、scale()最大优势：默认以中心点缩放，而且不影响其他盒子，可以通过transform-origin改变中心点。</p>
+</body>
+</html>

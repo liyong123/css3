@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scale放大、缩小->分页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .div_out ul {
+            margin-top: 30px;
+            /* 流式布局 */
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        li {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            border: solid 1px purple;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        li:hover {
+            transform: scale(1.2);
+        }
+    
+    
+
+        
+    </style>
+</head>
+<body>
+    <div class="div_out">
+        <ul>
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+            <li><span>7</span></li>
+        </ul>
+    </div>
+    
+</body>
+</html>

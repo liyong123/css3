@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scale放大、缩小</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .div_out {
+            /* 流式布局 */
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+         .div_out div {
+            flex: 0 0 25%;
+            padding: 0.5rem;
+        }
+        .div_out div a {
+            height: 100px;
+            display: block;
+            /* 超出范围隐藏 */
+            overflow: hidden;
+        }
+        img {
+             width: 100%;
+             height: 100%;
+             transition: all 0.2s;
+         }
+        .div_out div a img:hover {
+            transform: scale(1.05);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="div_out">
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+        <div><a href=""><img src="./images/sun.jpg" alt=""></a></div>
+    </div>
+    
+</body>
+</html>
