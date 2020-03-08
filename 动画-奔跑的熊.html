@@ -14,14 +14,13 @@
             background: url('./images/bingshan.jpg') no-repeat;
             background-size: 100% 100%;
         }
-        div {
+        div.bear {
            position: absolute;
            top: 50%;
            width: 200px;
            height: 100px;
            background: url('./images/bear.png') no-repeat;
            animation: moveB 1s steps(8) infinite , moveC 20s forwards;
-        
        }
        @keyframes moveB {
            0% {
@@ -41,9 +40,24 @@
                transform: translateX(-50%);
            }
        }
+       div.bing {
+           width: 50px;
+           height: 38px;
+           background: url('./images/bgb.jpg') no-repeat;
+           animation: moveS 1s steps(5) infinite 
+       }
+       @keyframes moveS {
+           0% {
+               background-position: 0 0;
+           }
+           100% {
+               background-position: -50px 0;
+           }
+       }
     </style>
 </head>
 <body>
-    <div></div>
+    <div class="bing"></div>
+    <div class="bear"></div>
 </body>
 </html>

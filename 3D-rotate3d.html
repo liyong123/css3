@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>rotate3d()</title>
+    <style>
+       div[class^='box'] {
+           width: 200px;
+           height: 200px;
+           margin: 100px auto;
+           perspective: 300px;
+       } 
+       div[class^='box']  img{
+           display: block;
+           height: 200px;
+           width: 200px;
+           transition: all 1s;
+       }
+       div.box img:hover {
+           transform: rotateX(360deg);
+       }
+       div.box2 img:hover {
+           /* 旋转方向：左右法则，大拇指向下，其余拇指弯曲的方向就是旋转的正方向*/
+           transform: rotateY(360deg);
+       }
+       div.box3 img:hover {
+           /* z轴垂直于屏幕，所以看起来和2d旋转差不多 */
+           /* 左手法则：大拇指指向自己，其余拇指弯曲的方向就是正方向 */
+           transform: rotateZ(360deg);
+       }
+       div.box4 img:hover {
+           /* 左右法则同样适用，大拇指指向对角线正方向，其余拇指弯曲方向就是旋转的正方向 */
+           transform: rotate3d(0, 1, 1, 360deg);
+       }
+    </style>
+</head>
+<body>
+    <h3>a:旋转方向判断->左手法则：</h3>
+    <p>1、左右的大拇指指向x轴正方向；</p>
+    <p>2、其余手指的弯曲方向就是该元素沿着x轴旋转的方向</p>
+    <h3>b:rotate3d(x, y, z, deg):</h3>
+    <p>1、沿着 <strong>自定义</strong> 轴旋转，deg为角度</p>
+    <p>2、xyz是表示旋转轴的矢量，表示是否沿着该轴旋转，最后一个表示旋转的角度</p>
+    <p>3、tansform: rotate3d(1, 0, 0, 45deg)：就是沿着x轴旋转45deg</p>
+    <p>3、tansform: rotate3d(1, 1, 0, 45deg)：就是沿着x轴和y轴的对角线旋转45deg</p>
+    <div class="box">
+        <img src="./images/kt1.jpg" alt="" />
+    </div>
+    <div class="box2">
+        <img src="./images/kt1.jpg" alt="">
+    </div>
+    <div class="box3">
+        <img src="./images/kt1.jpg" alt="">
+    </div>
+    <div class="box4">
+        <img src="./images/kt1.jpg" alt="">
+    </div>
+   
+</body>
+</html>

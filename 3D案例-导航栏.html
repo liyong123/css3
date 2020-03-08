@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d导航栏</title>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+       }
+       body {
+           display: flex;
+           justify-content: center;
+       }
+       ul {
+           margin: 100px auto;
+       }
+       ul > li {
+           width: 120px;
+           height: 35px;
+           list-style: none;
+           float: left;
+           /* 要看到透视效果，近大远小, 因为box也要旋转，所以加在li上，其子元素都有透视效果 */
+           perspective: 500px;
+           margin-right: 20px;
+       }
+       .box {
+           position: relative;
+           width: 100%;
+           height: 100%;
+           /* 让子元素开启3d空间 */
+           transform-style: preserve-3d;
+           transition: all 0.4s;
+       }
+       .box:hover {
+           /* 让盒子沿着x轴旋转 正的90deg */
+           transform: rotateX(90deg);
+       }
+       .front, .bottom {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       }
+       .front {
+           background-color: pink;
+           z-index: 1;
+           color: tomato;
+           /* 让粉色盒子沿着z轴向前移动盒子的一般距离，而不是让紫色盒子沿着z轴向后移动一半的距离，这样才能保证 旋转是以两个盒子的立体中心点旋转 */
+           /* transform: translateZ(100px), z轴一般跟px单位，向眼睛方向移动 */
+           transform: translateZ(17.5px);
+       } 
+       .bottom {
+           background-color: purple;
+           color: teal;
+           /* 紫色盒子向前扑倒，这样看到的文字才是正立的，所以是负值 */
+           /* translateY(50%):紫色盒子向下移动盒子一半的距离，使紫色盒子到底部 */
+           transform: translateY(50%) rotateX(-90deg);
+           
+       }
+      
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="box">
+                <div class="front"><span>nodejs</span></div>
+                <div class="bottom"><span>mongodb</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"><span>react</span></div>
+                <div class="bottom"><span>vue</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"><span>javascript</span></div>
+                <div class="bottom"><span>typescript</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"><span>html5</span></div>
+                <div class="bottom"><span>html</span></div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front"><span>css3</span></div>
+                <div class="bottom"><span>css</span></div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
