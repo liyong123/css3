@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: '微软雅黑';
+    background-color: #ddd;
+}
+.container {
+    width: 1200px;
+    margin: 20px auto;
+    columns: 5;
+    column-gap: 10px;
+}
+.container .box {
+    width: 100%;
+    margin: 0 0 10px;
+    padding: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    break-inside: avoid;
+}
+.container .box img {
+    width: 100%;
+}
+.container .box h2 {
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 14px;
+}
+.container .box p {
+    margin: 0;
+    padding: 0 0 10px;
+    font-size: 12px;
+}
+
+/* 响应式 */
+@media (max-width: 1200px) {
+    .container {
+        columns: 4;
+        width: calc(100% - 20px);
+        /* box-sizing: border-box; */
+        /* padding: 20px 0 20px 0; */
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        columns: 3;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        columns: 2;
+    }
+}
